@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { COUNTER_CONTEXT } from '../App';
 
-const Child = ({count, setCount}) => {
+const Child = () => {
+    const {count, setCount} = useContext(COUNTER_CONTEXT)
     return (
             <div className='bg-red-600 text-center text-white p-20 rounded'>
                 <h1 className='text-xl mb-1'>Child</h1>

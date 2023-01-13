@@ -1,9 +1,12 @@
 
+import { createContext, useState } from 'react';
 import './App.css';
 import Parent from './pages/Parent';
+export const COUNTER_CONTEXT = createContext()
 
 function App() {
-  // const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0)
+  const value = {count, setCount}
   return (
     // <div className='flex h-screen pt-10 w-full justify-center items-center bg-red-700'>
     //   <div className='bg-red-600 text-center text-white p-20 rounded'>
@@ -16,7 +19,9 @@ function App() {
     //   </div>
     // </div>
     
-      <Parent />
+     <COUNTER_CONTEXT.Provider value={value}>
+       <Parent />
+     </COUNTER_CONTEXT.Provider>
 
 
   );
